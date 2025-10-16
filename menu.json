@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Harika Filtre Kahve",
+    "price": "75 TL",
+    "description": "Özenle seçilmiş çekirdeklerden taptaze demlenmiş.",
+    "image": "images/kahve.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Limonlu Cheesecake",
+    "price": "120 TL",
+    "description": "Ev yapımı, ferahlatıcı lezzet.",
+    "image": "images/cheesecake.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Füme Etli Sandviç",
+    "price": "150 TL",
+    "description": "Ekşi mayalı ekmek arasında enfes füme et ve yeşillikler.",
+    "image": "images/sandvic.jpg"
+  }
+]

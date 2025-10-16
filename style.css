@@ -1,184 +1,104 @@
-/* Genel Stil Ayarları */
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     background-color: #fdfaf6;
     color: #333;
-    line-height: 1.6;
 }
 
-/* Header ve Navigasyon */
 header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/kafe-arkaplan.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/kafe-arkaplan.jpg');
     background-size: cover;
     background-position: center;
     color: white;
-    padding-bottom: 4rem;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: rgba(0,0,0,0.2);
-}
-
-nav .logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    font-weight: bold;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 1rem;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-nav ul li a:hover {
-    background-color: rgba(255,255,255,0.1);
-    border-radius: 5px;
-}
-
-.hero-content {
     text-align: center;
     padding: 4rem 1rem;
 }
 
-.hero-content h1 {
+header h1 {
     font-family: 'Playfair Display', serif;
     font-size: 3.5rem;
     margin: 0;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-.hero-content p {
-    font-size: 1.2rem;
-}
-
-/* Ana İçerik */
 main {
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
-}
-
-#menu {
     text-align: center;
 }
 
-#menu h2 {
+main h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
-    color: #8B4513; /* SaddleBrown */
-    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #8B4513;
+    margin-bottom: 2rem;
 }
 
 .menu-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
+    gap: 2rem;
 }
 
 .menu-item {
     background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px_8px rgba(0,0,0,0.1);
     padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .menu-item:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 .menu-item img {
     width: 100%;
-    height: 220px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 4px;
 }
 
 .menu-item h3 {
-    margin-top: 1.5rem;
-    font-size: 1.6rem;
-    font-family: 'Playfair Display', serif;
+    margin-top: 1rem;
+    font-size: 1.5rem;
 }
 
 .price {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: #8B4513;
-    margin: 0.5rem 0;
 }
 
 .description {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: #666;
-    flex-grow: 1;
-    min-height: 50px;
-    margin-bottom: 1rem;
+    min-height: 40px;
 }
 
-/* Buton */
 button {
-    background: linear-gradient(45deg, #25D366, #128C7E);
+    background-color: #25D366;
     color: white;
     border: none;
-    padding: 14px 28px;
+    padding: 12px 24px;
     border-radius: 50px;
     font-size: 1rem;
     cursor: pointer;
     font-weight: bold;
-    margin-top: auto;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin-top: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover {
-    transform: scale(1.05) translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    background-color: #128C7E;
+    transform: scale(1.05);
 }
 
-/* Footer */
 footer {
     text-align: center;
-    padding: 2rem 1rem;
-    background-color: #333;
+    padding: 1.5rem;
+    background-color: #3a3a3a;
     color: #fdfaf6;
-    margin-top: 3rem;
-}
-
-/* Mobil Uyumluluk (Responsive Design) */
-@media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    nav {
-        flex-direction: column;
-        padding: 1rem;
-    }
-
-    nav ul {
-        margin-top: 1rem;
-    }
-
-    .menu-container {
-        grid-template-columns: 1fr;
-    }
+    margin-top: 2rem;
 }
