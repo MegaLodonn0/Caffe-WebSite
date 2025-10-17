@@ -1,4 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- Authentication ---
+    function authenticate() {
+        const password = prompt('Lütfen yönetici parolasını girin:');
+        // Bu parolayı daha güvenli bir yöntemle saklamak en iyisidir,
+        // ancak statik bir site için bu basit bir koruma sağlar.
+        const correctPassword = 'lezzetduragi'; // Örnek parola
+
+        if (password === correctPassword) {
+            document.getElementById('admin-container').style.display = 'block';
+            loadInitialData(); // Load data only after authentication
+        } else {
+            alert('Yanlış parola. Erişim reddedildi.');
+        }
+    }
+
     // Global state to hold menu items
     let menuItems = [];
 
@@ -12,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const itemImageInput = document.getElementById('item-image');
     const jsonOutput = document.getElementById('json-output');
     const clearFormBtn = document.getElementById('clear-form-btn');
+    const downloadBtn = document.getElementById('download-json-btn');
 
     // --- Core Functions ---
 
@@ -136,11 +152,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    /**
+     * Handles the click on the download button.
+     */
+    function handleDownloadClick() {
+        const jsonString = jsonOutput.textContent;
+        const blob = new Blob([jsonString], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'menu.json';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+
     // --- Event Listeners ---
     form.addEventListener('submit', handleFormSubmit);
     itemList.addEventListener('click', handleItemListClick);
     clearFormBtn.addEventListener('click', clearForm);
+    downloadBtn.addEventListener('click', handleDownloadClick);
 
     // --- Initial Load ---
-    loadInitialData();
+    authenticate();
 });

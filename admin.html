@@ -71,12 +71,23 @@
     </style>
 </head>
 <body>
+<div id="admin-container" style="display:none;">
 <header>
     <h1>Menü Yönetim Paneli</h1>
     <p>Menüdeki ürünleri buradan yönetebilirsiniz.</p>
 </header>
 
 <main>
+    <section class="admin-section">
+        <h2>Kullanım Talimatları</h2>
+        <p>Menüyü yönetmek için aşağıdaki adımları izleyin:</p>
+        <ol style="padding-left: 20px; margin-top: 1rem;">
+            <li><strong>Düzenleme:</strong> Bir ürünü güncellemek için yanındaki "Düzenle" butonuna tıklayın. Bilgiler yukarıdaki forma yüklenecektir. Değişiklikleri yapıp "Kaydet"e basın.</li>
+            <li><strong>Ekleme:</strong> Yeni bir ürün eklemek için yukarıdaki formu doldurun ve "Kaydet"e basın. (Formun boş olduğundan emin olmak için "Formu Temizle" butonunu kullanabilirsiniz).</li>
+            <li><strong>Silme:</strong> Bir ürünü kaldırmak için "Sil" butonuna tıklayın.</li>
+            <li><strong>Son Adım:</strong> Tüm değişiklikleriniz bittiğinde, sayfanın en altındaki "menu.json İndir" butonuna tıklayın ve indirilen dosyayı geliştiricinize yollayın.</li>
+        </ol>
+    </section>
     <section class="admin-section">
         <h2>Mevcut Menü Öğeleri</h2>
         <ul id="menu-item-list" class="item-list">
@@ -112,12 +123,15 @@
     </section>
 
     <section class="admin-section">
-        <h2>Değişiklikleri Uygula</h2>
-        <p>Aşağıdaki metnin tamamını kopyalayın ve projenizdeki <code>menu.json</code> dosyasının içeriğiyle değiştirin.</p>
-        <pre id="json-output"><!-- Güncellenmiş JSON buraya gelecek --></pre>
+        <h2>Değişiklikleri Kaydet</h2>
+        <p>Menüyü güncellemeyi bitirdiğinizde, aşağıdaki butona tıklayarak <code>menu.json</code> dosyasını indirin ve geliştiricinize gönderin.</p>
+        <div class="button-group">
+            <button id="download-json-btn">menu.json İndir</button>
+        </div>
+        <pre id="json-output" style="display: none;"><!-- JSON verisi arka planda burada tutulacak --></pre>
     </section>
 </main>
-
+</div>
 <script src="admin.js"></script>
 </body>
 </html>
